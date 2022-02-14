@@ -1,9 +1,9 @@
 import { Switch, TextInput, TouchableOpacity } from 'react-native';
 import { Text, View } from '../components/Themed';
-import { CompositeScreenProps } from '@react-navigation/native';
 import { commonFormStyles as styles } from '../styles/commonForm';
+import { RootTabScreenProps } from '../types';
 
-export default function NaiveScreen({ navigation }: CompositeScreenProps<any, any>) {
+export default function NaiveScreen({ navigation }: RootTabScreenProps<'Naive'>) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Naive implementation</Text>

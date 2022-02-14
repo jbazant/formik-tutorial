@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
-import { CompositeScreenProps } from '@react-navigation/native';
+import { RootStackScreenProps } from '../types';
 
-export default function ModalScreen({route}: CompositeScreenProps<any, any>) {
-  const {email, message} = route.params;
+export default function ModalScreen({ route }: RootStackScreenProps<'Modal'>) {
+  const { email, message } = route.params;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)"/>
       <Text>Email: {email}</Text>
       <Text>Message: {message}</Text>
     </View>

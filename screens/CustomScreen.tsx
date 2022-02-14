@@ -1,9 +1,9 @@
 import { Switch, TextInput, TouchableOpacity } from 'react-native';
 import { Text, View } from '../components/Themed';
-import { CompositeScreenProps } from '@react-navigation/native';
 import { commonFormStyles as styles } from '../styles/commonForm';
+import { RootTabScreenProps } from '../types';
 
-export default function CustomScreen({ navigation }: CompositeScreenProps<any, any>) {
+export default function CustomScreen({ navigation }: RootTabScreenProps<'Custom'>) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Better implementation</Text>
