@@ -1,18 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import { CompositeScreenProps } from '@react-navigation/native';
 
-export default function ModalScreen() {
+export default function ModalScreen({route}: CompositeScreenProps<any, any>) {
+  const {email, message} = route.params;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
-
-      {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+      <Text>Email: {email}</Text>
+      <Text>Message: {message}</Text>
     </View>
   );
 }
